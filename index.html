@@ -1,10 +1,33 @@
+<!--<!DOCTYPE html>
+<html>
+<head>
+  <title>My Canva Website</title>
+</head>
+<body>
+  <img src="Home.JPG" width="100%">
+</body>
+</html>/
+!-->
 <!DOCTYPE html>
 <html>
 <head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <title>Bunthoeun & Sina's Wedding</title>
+  <style>
+    button{
+      margin-top: -50%;
+    }
+  </style>
 </head>
 <body>
-  <img src="Home.jpg" width="100%">
+  <img id="myImage" src="Bunthoeun&Sina's day.jpg" width="100%">
+  <center>
+    <button class="btn btn-outline-light btn-lg" onclick="changeImage()">Details Information</button>
+  </center>
+  <script>
+    function changeImage() {
+      document.getElementById("myImage").src = "HOME.jpg";
+    }
+  </script>
 </body>
-
 </html>
