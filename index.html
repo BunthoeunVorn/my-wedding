@@ -13,15 +13,15 @@
 
     /* Button position (UNCHANGED IDEA) */
     button {
-      margin-top: 30%;
+      margin-top: -50%;
       position: relative;
       z-index: 5;
     }
 
-    /* Countdown overlay (ONLY for Home.jpg) */
+    /* Countdown overlay (ONLY for Home.png) */
     .countdown-box {
       position: absolute;
-      top: 52%;       /* adjust up/down */
+      top: 90%;       /* adjust up/down */
       left: 50%;
       transform: translate(-50%, -50%);
       text-align: center;
@@ -38,7 +38,7 @@
     .labels {
       display: flex;
       justify-content: center;
-      gap: 40px;
+      gap: 80px;
       font-size: 14px;
       margin-top: 8px;
       letter-spacing: 2px;
@@ -58,14 +58,15 @@
   <!-- Image container -->
   <div style="position: relative;">
 
-  <center>
-    <button class="btn btn-outline-light btn-lg" onclick="changeImage()">
+    <img id="myImage" src="Bunthoeun&Sina's day.png" width="100%">
+    <center>
+    <button id="btnDetail" class="btn btn-outline-light btn-lg" onclick="changeImage()" style="margin-top: -120%; font-size: 4pc; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
       Details Information
     </button>
   </center>
-    <img id="myImage" src="Bunthoeun&Sina's day.png" width="100%">
 
-    <!-- Countdown (ON Home.jpg ONLY) -->
+    <img id="myCountDownImage" src="Countdown.png" width="100%" hidden=true>
+    <!-- Countdown (ON Home.png ONLY) -->
     <div class="countdown-box" id="countdownBox">
       <div class="time" id="countdown">00 : 00 : 00 : 00</div>
       <div class="labels">
@@ -76,11 +77,25 @@
       </div>
     </div>
   </div>
+  <img id="myDetailScheduleImage" src="Detail & Schedule.png" width="100%" hidden=true>
+  <img id="myLocationImage" src="Location.png" width="100%" hidden=true>
+  <center>
+    <button id="btnLocation" class="btn btn-outline-light btn-lg" style="margin-top: -15%; font-size: 4pc; font-family: 'Courier New', Courier, monospace;" hidden=true>
+      <a href="https://maps.app.goo.gl/V1u3GghNMpv9L9p96" style="color: white;"> Location </a>
+    </button>
+  </center>
+  <img id="myThanksImage" src="Thank You.png" width="100%" hidden=true>
 
   <script>
     /* Keep your button logic */
     function changeImage() {
-      document.getElementById("myImage").src = "Home.jpg";
+      document.getElementById("btnDetail").hidden = true;
+      document.getElementById("btnLocation").hidden = false;
+      document.getElementById("myCountDownImage").hidden = false;
+      document.getElementById("myDetailScheduleImage").hidden = false;
+      document.getElementById("myLocationImage").hidden = false;
+      document.getElementById("myThanksImage").hidden = false;
+      document.getElementById("myImage").src = "Home.png";
       document.getElementById("countdownBox").style.display = "block";
     }
 
